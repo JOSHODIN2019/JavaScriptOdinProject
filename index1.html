@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+     <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+</head>
+
+<body>
+
+    <h1>My shopping list</h1>
+
+    <form>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </form>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        // //GROCERY INPUT
+
+        // //create variables that holds these elements
+        // const ul = document.querySelector("ul");
+        // const input = document.querySelector("#item");
+        // const button = document.querySelector("button");
+
+        // //create function to response to the events
+        // function preventRefreshFunction(event) { 
+        //      event.preventDefault();
+        //      //get what the user typed and store value in a variable
+        //     const itemValue = input.value;
+            
+        //     //Immediately after that, clear the input element, but the value you copied is still safely stored in itemValue.
+        //     input.value = "";
+        //     input.focus();
+
+        //     //Create three new elements
+        //     const li = document.createElement("li");  
+        //     const span = document.createElement("span");
+        //     const btn = document.createElement("button");
+              
+        //     //Append the span and button as children of the list item.
+        //     li.appendChild(span);
+        //     li.appendChild(btn);    
+
+        //     //put the input text into the span
+        //     span.textContent = itemValue; 
+
+        //     //change the button text to Delete
+        //     btn.textContent = "Delete";
+
+        //     //Append the list item to the list
+        //     ul.appendChild(li);
+
+
+        //     btn.addEventListener("click", () => {
+        //         li.remove();
+        //     });
+        // }
+        // button.addEventListener("click", preventRefreshFunction);
+
+        
+
+      
+    
+    
+    // const link = document.querySelector("a");
+    // link.textContent = "Mozilla Developer Network";
+    // link.href = "https://developer.mozilla.org";
+
+
+    //const container = document.querySelector("#container"); // make sure this exists in your HTML
+    // const para = document.createElement("p");
+    // para.classList.add("color"); 
+    // para.textContent = "Hey I'm red!"; 
+    // para.style.color = "red";
+    // container.appendChild(para);  
+
+    // const h3 = document.createElement("h3");
+    // h3.textContent = "I'm a blue h3!"; 
+    // h3.style.color = "blue";
+    // container.appendChild(h3);
+
+    // const div = document.createElement("div");
+    // div.style.border = "2px solid black";
+    // div.style.background = "pink";
+
+    // const h1 = document.createElement("h1");
+    // h1.textContent = "I'm in a div"; 
+   
+    // const p = document.createElement("p");
+    // p.textContent = "ME TOO"; 
+
+
+
+    // div.appendChild(h1);
+    // div.appendChild(p); 
+    // container.appendChild(div);
+
+    
+
+     
+  
+
+
+        // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // let evenNums = arr.filter(function(n) { 
+        //   return n % 2 === 0; 
+        // }); 
+        // console.log(evenNums);
+
+        // let tripleEvenNums = evenNums.map(function(n) {
+        //   return n * 3
+
+        // })
+        // console.log(tripleEvenNums);
+
+        // let sumTripleEvenNums = tripleEvenNums.reduce(function(total, current) {
+        // return total + current;
+
+        // })
+        //  console.log(sumTripleEvenNums);
+        // let arr = "I-am-Josh";
+        // let splitIntoArray = arr.split("-");
+        // console.log(splitIntoArray);
+        // let joinArrayItems = splitIntoArray.join("");
+        // console.log(joinArrayItems);
+
+        // // Function to remove a specific separator from a string
+        //    function removeSeparator(str, hyphen = "-") {
+        //     // Split the string by the separator
+        //     let splitArr = str.split(hyphen);
+        //     // Join the pieces back together without the separator
+        //     return splitArr.join("");
+        //     }
+          
+        //     // let arr = "I-am-Josh";
+        //     let result = removeSeparator("background-color");
+        //     console.log(result); // 
+
+
+           
+            // function filterRange(arr, a, b){
+            //         return arr.filter(function(n){
+            //         return n >= a  && n <= b;
+            //     });
+            // }   
+            // let arr = [5, 3, 8, 1];
+            // let fil = filterRange(arr, 1, 4);
+            // alert(fil); 
+
+
+            // return function filterRangeInPlace(arr, a, b) {
+            //     return a <= arr[i] <= b;
+            // };
+            // let arr = [5, 3, 8, 1];
+            // filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+            // alert( arr );
+
+            // let arr = [5, 2, 1, -10, 8];
+            // let sorted = arr.sort(function(a,b){
+            //     return b - a;
+            // })
+            // alert(sorted);
+
+
+            // function copySorted(arr){
+            //     return arr.slice().sort();  ;  //make a copy and sort array of strings
+            // }
+
+            //     let arr = ["HTML", "JavaScript", "CSS"];
+
+            //     let sorted = copySorted(arr);
+
+            //     alert( sorted );  //CSS, HTML, JavaScript
+            //     //alert( arr );  //HTML, JavaScript, CSS (no changes)
+
+            // function unique(arrs){
+            //   let result = [];
+            //   for (const arr of arrs){
+            //     if (!result.includes(arr)) {
+            //      result.push(arr);
+            //     }
+               
+            //   }
+            //    return result;
+            // };
+            // // alert(result);
+            // let strings = ["Hare", "Krishna", "Hare", "Krishna", ":-O"];
+            // alert(unique(strings));
+
+
+
+            //Exercise 06 - repeatString
+            // function repeatString(str, num){
+            //          let result = "";
+            //          for (let i = 0; i < num; i++){
+            //              result += str;
+            //          }
+            //          return result;
+            // }
+            // alert (repeatString('hey', 3));
+
+
+            //Exercise 07 - Reverse a String
+            // function reverseString(str){
+            //     return str.split("").reverse();
+            // };
+            // alert (reverseString('hello there'));
+
+
+            //Exercise 08 - removeFromArray
+            // function removeFromArray(arr, arg) {
+            //     return arr.filter(function(n){
+            //         return n !== arg;
+            //     })
+            // }
+            // alert (removeFromArray([1, 2, 3, 4], 3)); // should remove 3 and return [1,2,4]
+
+
+
+            // //Exercise 09 - sumAll
+            // function sumAll(first, second){
+            //     let result = [];
+            //     for (i=first; i<=second; i++){
+            //         result.push(i);  
+            //     }
+            //     let total = result.reduce(function(total, current){
+            //         return total + current;
+            //     })
+
+            //     return total;
+              
+            // }
+            // alert (sumAll(1, 9));
+
+
+
+            // //Exercise 10 - leapYears
+            // function leapYears(yr){
+            //     if (yr % 4 === 0 && yr % 100 !== 0){
+            //         return true;
+            //     } else if (yr % 400 === 0){
+            //         return true;
+            //     } else {return false;}
+            // }
+            // // alert (leapYears(2000)); // is a leap year: returns true
+            // alert (leapYears(1985)); // is not a leap year: returns false
+
+
+
+            
+            
+
+            // Exercise 11 - tempConversion
+            // function convertToCelsius(arg){
+            //     celsius = (arg - 32) * 5 / 9;
+            //     return Math.round(celsius);
+            // }
+            // alert (convertToCelsius(100));
+
+            //  function convertToFahrenheit(arg){
+            //     Fahrenheit = (arg * 9 / 5) + 32;
+            //     return Math.round(Fahrenheit);
+            // }
+            // alert (convertToFahrenheit(0));
+
+
+
+    </script>
+    
+</body>
+</html>
