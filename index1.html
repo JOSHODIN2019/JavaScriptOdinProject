@@ -19,7 +19,8 @@
 
 <body>
 
-    <h1>My shopping list</h1>
+
+    <!-- <h1>My shopping list</h1>
 
     <form>
       <label for="item">Enter a new item:</label>
@@ -29,9 +30,259 @@
 
     <ul>
 
-    </ul>
+    </ul> -->
 
     <script>
+        const people = [
+      {
+        name: "Carly",
+        yearOfBirth: 1942,
+        yearOfDeath: 1970,
+      },
+      {
+        name: "Ray",
+        yearOfBirth: 1962,
+        yearOfDeath: 2011,
+      },
+      {
+        name: "Jane",
+        yearOfBirth: 1912,
+        yearOfDeath: 1941,
+      },
+    ]
+        function getAge(arr){
+        return arr.yearOfDeath - arr.yearOfBirth 
+
+      } 
+      let usersMapped = people.map(getAge);
+      alert(usersMapped);
+
+
+
+    // const findTheOldest = function() {
+
+    // };
+
+    // // Do not edit below this line
+    // module.exports = findTheOldest;
+
+
+
+
+
+
+    // const books = [
+    //   {
+    //     title: 'Book',
+    //     author: 'Name'
+    //   },
+    //   {
+    //     title: 'Book2',
+    //     author: 'Name2'
+    //   }
+    // ]
+    // const newArr = [];
+    // const getTheTitles = function(arr){
+    //   for (let i = 0; i < arr.length; i++){
+    //       newArr.push(arr[i].title)
+    //   }
+    //   return newArr;
+    // }
+
+
+    // alert (getTheTitles(books)) // ['Book','Book2']
+
+      
+
+
+      //FIBONACCI TASK
+      // const numbers = [2, 4]; 
+
+      // const fibonacci = function(arr, count) {
+      //   for (let i = 0; i < count; i++) {
+      //    const sumArr = arr[arr.length - 1] + arr[arr.length - 2];
+      //    arr.push(sumArr);
+      //   }
+      //    return arr;
+      // };
+      // alert(fibonacci(numbers, 5));
+
+      // // Do not edit below this line
+      // module.exports = fibonacci;
+
+
+
+
+
+
+
+    // const firstValue = Number(prompt("Enter first value:"));
+    // const secondValue = Number(prompt("Enter second value:"));
+
+    // const add = function(a,b) {
+    //   return a + b;
+    
+    // };
+    // prompt(add(firstValue,secondValue));
+
+
+
+    //  const subtract = function(a,b) {
+    //    return a - b;
+    //   };
+    // prompt(subtract(firstValue,secondValue));
+
+
+    //  const arr = [1,2,4];
+    //  const sum = function(array) {
+    //   return array.reduce(function(acc,curr){
+    //     return acc * curr
+    //     }
+    //   )
+    //   };
+    //  prompt(sum(arr));
+
+
+
+  //   const multiply = function() {
+
+  //   };
+
+  //   const power = function() {
+    
+  //   };
+
+  //   const factorial = function() {
+    
+  //   };
+
+  // // Do not edit below this line
+  // module.exports = {
+  //   add,
+  //   subtract,
+  //   sum,
+  //   multiply,
+  //   power,
+  //   factorial
+  // };
+
+
+
+
+
+
+      // //TASK 1 
+      // // Map to names
+      // //You have an array of user objects, each one has user.name. 
+      // // Write the code that converts it into an array of names.      
+      // // let john = { name: "John", age: 25 };
+      // let pete = { name: "Pete", age: 30 };
+      // let mary = { name: "Mary", age: 28 };
+
+      // let users = [ john, pete, mary ];
+
+      // let names = [ john.name, pete.name, mary.name ];
+
+      // alert( names ); // John, Pete, Mary
+
+
+
+      //TASK 2
+      //Map to objects
+      //You have an array of user objects, each one has name, surname and id.
+      //Write the code to create another array from it, 
+      //of objects with id and fullName, where fullName is generated from name and surname.
+
+      // let john = { name: "John", surname: "Smith", id: 1 };
+      // let pete = { name: "Pete", surname: "Hunt", id: 2 };
+      // let mary = { name: "Mary", surname: "Key", id: 3 };
+
+      // let users = [ john, pete, mary ];
+
+      // let newJohn = { fullName: john.name + " " + john.surname, id: john.id }
+      // let newPete = { fullName: pete.name + " " + pete.surname, id: pete.id }
+      // let newMary = { fullName: mary.name + " " + mary.surname, id: mary.id }
+
+      // let usersMapped = [ newJohn, newPete, newMary ]
+
+      // /*
+      // usersMapped = [
+      //   { fullName: "John Smith", id: 1 },
+      //   { fullName: "Pete Hunt", id: 2 },
+      //   { fullName: "Mary Key", id: 3 }
+      // ]
+      // */
+
+      // alert( usersMapped[0].id ) // 1
+      // alert( usersMapped[0].fullName ) // John Smith
+
+
+
+
+      //TASK 3
+      //Get average age
+      //Write the function getAverageAge(users) that gets an array of 
+      //objects with property age and returns the average age.
+      //The formula for the average is (age1 + age2 + ... + ageN) / N.
+
+
+      // let john = { name: "John", age: 25 };
+      // let pete = { name: "Pete", age: 30 };
+      // let mary = { name: "Mary", age: 29 };
+
+      // let users = [ john, pete, mary ];
+
+      // //get the ages
+      // let userAge = users.map(function(users){return users.age});
+
+      // //add all
+      // let accummulated = userAge.reduce(function(acc, current){
+      //     return acc + current
+      //  }, 0)
+
+      //  // get their average
+      // function getAverageAge(users){ 
+      //   return accummulated / users.length;  
+      // } 
+
+      // alert( getAverageAge(users) ); // (25 + 30 + 29) / 3 = 28
+
+
+
+
+
+      //TASK 4
+      //Sort users by age
+      //Write the function sortByAge(users) that gets an array of 
+      //objects with the age property and sorts them by age.
+
+      // let john = { name: "John", age: 25 };
+      // let pete = { name: "Pete", age: 30 };
+      // let mary = { name: "Mary", age: 28 };
+
+      // let arr = [ pete, john, mary ];
+
+      // let sortAge = arr.map(function(users){return users.age});
+
+      // let sorted = sortAge.sort(function(a, b) { 
+      //   return a - b; 
+      // }); 
+
+      // //sortByAge(arr);
+      // alert(sorted);
+
+      // // now: [john, mary, pete]
+      // alert(arr[0].name); // John
+      // alert(arr[1].name); // Mary
+      // alert(arr[2].name); // Pete
+
+
+
+
+
+
+
+
         // //GROCERY INPUT
 
         // //create variables that holds these elements

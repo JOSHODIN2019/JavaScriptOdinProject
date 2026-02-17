@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        <div class="display"></div>
+        <div class="first">
+             <button class="numbers">7</button>
+             <button class="numbers">8</button>
+             <button class="numbers">9</button>
+             <button class="operators">÷</button>
+        </div>
+       
+        <div class="second">
+             <button class="numbers">4</button>
+             <button class="numbers">5</button>
+             <button class="numbers">6</button>
+             <button class="operators">×</button>
+        </div>
+
+        <div class="third">
+            <button class="numbers">1</button>
+            <button class="numbers">2</button>
+            <button class="numbers">3</button>
+            <button class="operators">-</button>
+        </div>
+        
+        <div class="fourth">
+            <button class="AC">A/C</button>
+            <button class="numbers">0</button>
+            <button class="equal">=</button>
+            <button class="operators">+</button>
+        </div>
+    </div>
+    
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;  /* horizontal center */
+            align-items: center; 
+            padding-top: 100px;
+            }
+
+        .main {
+            border: 2px solid lightgrey;
+            background: rgba(28, 28, 30, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 18px;
+            width: 274px;
+            /* height: 500px; */
+            /* padding-top: 120px;
+            padding-bottom: 0px; */
+            padding: 4px;
+              /* Subtle glass border */
+            border: 3px solid rgba(255, 255, 255, 0.08);
+              /* Layered macOS-style shadows */
+            box-shadow:
+                0 8px 24px rgba(0, 0, 0, 0.35),   /* main soft drop */
+                0 1px 0 rgba(255, 255, 255, 0.05) inset,  /* top inner highlight */
+                0 -1px 0 rgba(0, 0, 0, 0.4) inset; /* bottom inner depth */
+            
+        }
+
+        .AC {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            border: none;
+            /* cursor: pointer; */
+            font-size: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #8a8a8a;
+            color: #FFFFFF;
+        }
+
+        .numbers {
+            background:#717175;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            border: none;
+            color: #FFFFFF;
+            /* cursor: pointer; */
+            font-size: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            
+        }
+
+          .operators, .equal {
+            align-items: center;
+            background:#ef9001;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            border: none;
+            color: #FFFFFF;
+            /* cursor: pointer; */
+            font-size: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            
+        }
+
+        .display {
+            /* background-color: #1C1C1E; */
+            color: #FFFFFF;
+            font-size: 40px;
+            text-align: right;
+            padding: 20px;
+            padding-top: 100px;
+            padding-right: 6px;
+            padding-bottom: 2px;
+            margin-bottom: 0px;
+            border: none;
+            min-height: 50px;
+            word-wrap: break-word;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            }
+    </style>
+
+
+    <script>
+            //additon function
+            function add(a, b) {
+                 return a + b;
+            }
+
+            //substration function
+            function substrat(a, b) {
+                 return a - b;
+            }
+
+            //multiplication function
+            function multiply(a, b) {
+                 return a * b;
+            }
+
+            //division function
+            function divide(a, b) {
+                 return a / b;
+            }
+            // Select the number and the operator elements 
+            const numbers = document.querySelectorAll(".numbers");
+            const operators = document.querySelectorAll(".operators");
+            const display = document.querySelector(".display");
+            const equal = document.querySelector(".equal");
+            const ac = document.querySelector(".AC");      
+            // functions that update one of your number variables 
+            // when the calculator’s digit buttons are clicked
+            function inputFunction(event) {           
+                 display.textContent = display.textContent + event.target.textContent;     // what is clicked
+                }
+
+            
+            // attach the function to each number button
+            numbers.forEach(function(button) {
+                button.addEventListener("click", inputFunction);  
+            });
+
+            // functions that update only one of your operator variables 
+            // when the calculator’s operator buttons are clicked
+            function operatorInputFunction(event) {           
+                 display.textContent = display.textContent + event.target.textContent;     // what is clicked
+                }
+
+             // attach the function to each operator button
+            operators.forEach(function(button) {
+                button.addEventListener("click", operatorInputFunction);
+            });
+
+            //a function to It splits "12+5" into two numbers, converts them 
+            // from text to numbers, adds them, and displays the result.
+            function addition(){
+                const values = display.textContent.split("+");   //Cut this string anywhere you see +, this 12+5 become value = an array ["12", "5"]
+                const firstNumber = Number(values[0]);  //values[0] is "12"
+                const secondNumber = Number(values[1]); //values[1] is "5"
+                display.textContent = add(firstNumber, secondNumber);
+                //WHY USE Number():because values from the display are text, 
+                // so "12" + "5" would join together to make "125", but converting them 
+                // to numbers allows 12 + 5 to correctly give 17.
+            }
+
+             function substration(){
+                const values = display.textContent.split("-");   //Cut this string anywhere you see +, this 12+5 become value = an array ["12", "5"]
+                const firstNumber = Number(values[0]);  //values[0] is "12"
+                const secondNumber = Number(values[1]); //values[1] is "5"
+                display.textContent = substrat(firstNumber, secondNumber);
+               
+            }
+
+             function multiplication(){
+                const values = display.textContent.split("×");   //Cut this string anywhere you see +, this 12+5 become value = an array ["12", "5"]
+                const firstNumber = Number(values[0]);  //values[0] is "12"
+                const secondNumber = Number(values[1]); //values[1] is "5"
+                display.textContent = multiply(firstNumber, secondNumber);
+               
+            }
+
+            function division(){
+                const values = display.textContent.split("÷");   //Cut this string anywhere you see +, this 12+5 become value = an array ["12", "5"]
+                const firstNumber = Number(values[0]);  //values[0] is "12"
+                const secondNumber = Number(values[1]); //values[1] is "5"
+                display.textContent = divide(firstNumber, secondNumber);
+               
+            }
+
+
+            function calculate() {
+                if (display.textContent.includes("+")) {
+                    addition();
+                } 
+                else if (display.textContent.includes("-")) {
+                    substration();
+                }
+                 else if (display.textContent.includes("×")) {
+                    multiplication();
+                }
+                 else if (display.textContent.includes("÷")) {
+                    division();
+                }
+            }
+            
+            //create a function to clear displayed values
+            function clear() {
+                display.textContent = " ";
+            }
+
+            function brightenButton() {
+                this.style.filter = "brightness(1.2)";
+                setTimeout(() => {
+                this.style.filter = "brightness(1)";
+                }, 100);
+            }
+
+            numbers.forEach(button => {
+                    button.addEventListener("click", brightenButton);
+                });
+
+                operators.forEach(button => {
+                    button.addEventListener("click", brightenButton);
+                });
+
+                equal.addEventListener("click", brightenButton);
+                ac.addEventListener("click", brightenButton);
+
+            //call the clear fucntion when the A/C button is clicked
+            ac.addEventListener("click", clear)
+            
+            //call the calculate function depending on the operator clicked
+            equal.addEventListener("click", calculate) 
+          
+
+    
+
+        </script>
+
+
+
+
+
+    <!-- <script>
+        //USER ENTER VALUE & OPERATOR
+        const firstValue = Number(prompt("Enter first value:"));
+        const secondValue = Number(prompt("Enter second value:"));
+        const operators = (prompt("Enter operator (+, -, *, /):"));
+
+       
+        prompt(operate(firstValue,secondValue,operators));
+
+    </script> -->
+    
+</body>
+</html>
